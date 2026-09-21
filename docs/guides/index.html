@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Detailed implementation guides for the C++ Backend Roadmap." />
+  <title>Step Guide · C++ Backend Roadmap</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <style>
+    :root{--bg:#091224;--ink:#e9f0ff;--muted:#a9b6cf;--surface:#111c35;--surface2:#172747;--line:#30446b;--cyan:#61dafb;--gold:#f7c948;--green:#61d394;--code:#060d1b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.72 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--cyan)}.topbar{position:sticky;top:0;z-index:10;background:rgba(9,18,36,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topbar-inner{max-width:1120px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.back{text-decoration:none;font-weight:800}.step-picker{display:flex;gap:6px;align-items:center}.step-picker a{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--line);border-radius:9px;text-decoration:none;color:var(--muted);font-weight:800;font-size:.86rem}.step-picker a.active{color:#06101f;background:var(--cyan);border-color:var(--cyan)}.layout{max-width:1120px;margin:auto;padding:48px 22px 80px;display:grid;grid-template-columns:minmax(0,760px) 260px;gap:54px}.article{display:none}.article.active{display:block}.kicker{text-transform:uppercase;letter-spacing:.14em;color:var(--cyan);font-size:.75rem;font-weight:850}.article h1{font-size:clamp(2.3rem,6vw,4.7rem);line-height:1.02;letter-spacing:-.055em;margin:10px 0 18px}.lede{font-size:1.17rem;color:#c8d5eb;margin:0 0 30px;max-width:700px}.outcome{background:linear-gradient(135deg,#13254a,#12203b);border:1px solid #365788;border-radius:16px;padding:20px 22px;margin:28px 0}.outcome strong{color:var(--gold)}h2{font-size:1.65rem;line-height:1.25;letter-spacing:-.025em;margin:46px 0 14px;padding-top:8px}h3{font-size:1.12rem;margin:28px 0 8px;color:#dce7fa}p{margin:0 0 17px}ul,ol{padding-left:1.4rem}li{margin:7px 0}.why{border-left:3px solid var(--cyan);padding:4px 0 4px 18px;color:#c6d3ea;margin:22px 0}.why strong{color:var(--cyan)}pre{background:var(--code);border:1px solid #263b62;border-radius:13px;padding:17px 18px;overflow:auto;line-height:1.5;font-size:.89rem;margin:15px 0 22px;box-shadow:inset 0 1px rgba(255,255,255,.035)}code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}p code,li code{background:#1a2a49;border:1px solid #304970;border-radius:5px;padding:.1em .35em;color:#dff6ff;font-size:.9em}.note,.warning{border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:20px 0;background:var(--surface)}.note strong{color:var(--green)}.warning strong{color:var(--gold)}.checklist{list-style:none;padding:0}.checklist li{position:relative;padding:10px 12px 10px 42px;background:var(--surface);border:1px solid var(--line);border-radius:10px;margin:8px 0}.checklist li:before{content:'□';position:absolute;left:15px;color:var(--green);font-weight:900}.refs{margin-top:55px;border-top:1px solid var(--line);padding-top:22px}.refs h2{margin-top:0}.refs li{margin:9px 0}.next{display:flex;justify-content:space-between;gap:12px;margin-top:38px;padding-top:22px;border-top:1px solid var(--line)}.next a{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:10px 13px;text-decoration:none;font-weight:750}.toc{position:sticky;top:82px;align-self:start;border-left:1px solid var(--line);padding-left:22px}.toc strong{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.toc a{display:block;text-decoration:none;color:var(--muted);padding:7px 0;font-size:.9rem}.toc a:hover{color:var(--cyan)}@media(max-width:850px){.layout{grid-template-columns:1fr;padding-top:30px}.toc{display:none}.topbar-inner{padding-inline:14px}.article h1{font-size:2.55rem}}@media(max-width:480px){body{font-size:16px}.step-picker a{width:30px;height:30px}.topbar-inner{align-items:flex-start}.layout{padding-inline:15px}.next{flex-direction:column}.article h1{font-size:2.2rem}}
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="Guide navigation"><div class="topbar-inner"><a class="back" href="../">← Roadmap</a><div class="step-picker" aria-label="Available detailed guides"><span>Step</span><a href="?step=1" data-nav="1">1</a><a href="?step=2" data-nav="2">2</a><a href="?step=3" data-nav="3">3</a><a href="?step=4" data-nav="4">4</a><a href="?step=5" data-nav="5">5</a></div></div></nav>
+  <main class="layout"><div>
+    <article class="article" data-step="1">
+      <div class="kicker">Step 1 of 200 · Modern C++</div>
+      <h1>Install a modern C++ compiler</h1>
+      <p class="lede">Set up a compiler that supports modern C++, prove that the complete compile–run loop works, and learn exactly what the compiler is doing for you.</p>
+      <div class="outcome"><strong>Definition of done:</strong> you can compile a C++20 program from a terminal, run it, identify your compiler and version, and explain the difference between source code and the executable it produces.</div>
+      <h2 id="purpose-1">What you are installing—and why</h2>
+      <p>C++ source files are plain text. Your computer cannot execute them directly. A compiler parses that text, checks the language rules, translates it to machine code, and produces object files. A linker then joins those object files with the C++ standard library into an executable.</p>
+      <p>For this roadmap, use a compiler with solid C++20 support:</p>
+      <ul><li><strong>Clang</strong> is the natural choice on macOS and an excellent choice on Linux.</li><li><strong>GCC</strong> is the most common choice on Linux.</li><li><strong>MSVC</strong> is the standard Windows toolchain and integrates with Visual Studio.</li></ul>
+      <div class="why"><strong>Why C++20?</strong> It gives us a modern baseline—structured bindings, concepts, ranges, improved concurrency tools and coroutine language support—without depending on brand-new compiler behavior.</div>
+      <h2 id="install-1">Install the compiler</h2>
+      <h3>macOS</h3>
+      <p>Install Apple’s Command Line Tools. This supplies <code>clang++</code>, the system headers, linker and debugger.</p>
+      <pre><code>xcode-select --install</code></pre>
+      <p>Complete the installer window, open a new terminal, then verify:</p>
+      <pre><code>clang++ --version
+xcode-select -p</code></pre>
+      <h3>Ubuntu or Debian Linux</h3>
+      <pre><code>sudo apt update
+sudo apt install build-essential gdb
+g++ --version</code></pre>
+      <p><code>build-essential</code> installs GCC, the C++ compiler, the linker and basic build tools. <code>gdb</code> is the debugger we will need later.</p>
+      <h3>Fedora Linux</h3>
+      <pre><code>sudo dnf group install "Development Tools"
+sudo dnf install gcc-c++ gdb
+g++ --version</code></pre>
+      <h3>Windows</h3>
+      <ol><li>Download Visual Studio Community or Build Tools for Visual Studio.</li><li>Select <strong>Desktop development with C++</strong>.</li><li>Keep MSVC, the Windows SDK and C++ CMake tools selected.</li><li>Open <strong>Developer PowerShell for VS</strong> and run <code>cl</code>.</li></ol>
+      <p>A version banner confirms that MSVC is available. Use the Developer PowerShell because it configures the environment variables that <code>cl.exe</code> needs.</p>
+      <h2 id="first-1">Compile your first program</h2>
+      <p>Create <code>hello.cpp</code> with this code:</p>
+      <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Compiler ready!\n";
+    return 0;
+}</code></pre>
+      <p>On macOS with Clang:</p>
+      <pre><code>clang++ -std=c++20 -Wall -Wextra -Wpedantic hello.cpp -o hello
+./hello</code></pre>
+      <p>On Linux with GCC:</p>
+      <pre><code>g++ -std=c++20 -Wall -Wextra -Wpedantic hello.cpp -o hello
+./hello</code></pre>
+      <p>On Windows in Developer PowerShell:</p>
+      <pre><code>cl /std:c++20 /W4 /EHsc hello.cpp
+.\hello.exe</code></pre>
+      <p>You should see <code>Compiler ready!</code>.</p>
+      <h2 id="flags-1">Understand the command</h2>
+      <ul><li><code>-std=c++20</code> selects the language version.</li><li><code>-Wall -Wextra -Wpedantic</code> enables useful warnings. Warnings often reveal bugs before the program runs.</li><li><code>hello.cpp</code> is the translation unit to compile.</li><li><code>-o hello</code> names the executable.</li><li>MSVC’s equivalents are <code>/std:c++20</code>, <code>/W4</code> and <code>/EHsc</code>.</li></ul>
+      <div class="note"><strong>Good habit:</strong> treat warnings as work to resolve, not background noise. Clean warning output is part of a healthy C++ project.</div>
+      <h2 id="debug-1">Prove errors are useful</h2>
+      <p>Temporarily remove the semicolon after the <code>std::cout</code> statement and compile again. Read the first diagnostic carefully. Compilers may emit several follow-on errors, but the first one usually points closest to the cause. Restore the semicolon and recompile.</p>
+      <div class="warning"><strong>Common failure:</strong> “command not found” means the tool is not installed or is not on your shell’s <code>PATH</code>. Reopen the terminal after installation. On Windows, use the Developer PowerShell.</div>
+      <h2 id="done-1">Completion checklist</h2>
+      <ul class="checklist"><li>The compiler version command works.</li><li><code>hello.cpp</code> compiles with C++20 enabled.</li><li>The executable prints the expected output.</li><li>You can explain source file → compiler → object code → linker → executable.</li><li>You intentionally triggered, read and fixed one compiler diagnostic.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://clang.llvm.org/get_started.html" target="_blank" rel="noreferrer">Clang: Getting Started</a></li><li><a href="https://gcc.gnu.org/onlinedocs/gcc/Invoking-GCC.html" target="_blank" rel="noreferrer">GCC command options</a></li><li><a href="https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation" target="_blank" rel="noreferrer">Microsoft C++ installation guide</a></li><li><a href="https://en.cppreference.com/w/cpp/compiler_support" target="_blank" rel="noreferrer">C++ compiler support table</a></li></ul></section>
+      <div class="next"><span></span><a href="?step=2">Next: Set up the editor →</a></div>
+    </article>
+    <article class="article" data-step="2">
+      <div class="kicker">Step 2 of 200 · Modern C++</div>
+      <h1>Set up VS Code or CLion</h1>
+      <p class="lede">Turn a text editor into a reliable C++ workspace with completion, diagnostics, formatting, building and debugging—without hiding how the toolchain works.</p>
+      <div class="outcome"><strong>Definition of done:</strong> your editor opens the project folder, understands C++ symbols, builds with warnings enabled, stops at a breakpoint, lets you inspect a variable and uses a consistent formatter.</div>
+      <h2 id="choose-2">Choose one editor</h2>
+      <p><strong>VS Code</strong> is lightweight and explicit: you assemble the extensions and build configuration. It is a good choice if you want to understand every layer. <strong>CLion</strong> is a full C++ IDE: project indexing, CMake and debugging work together with less setup. Both are professional tools; choose one and keep moving.</p>
+      <h2 id="vscode-2">Path A: VS Code</h2>
+      <h3>1. Install the required extensions</h3>
+      <ul><li><strong>C/C++</strong> by Microsoft for IntelliSense and debugging.</li><li><strong>CMake Tools</strong> by Microsoft—we will use it fully in Step 3.</li><li><strong>CodeLLDB</strong> on macOS/Linux if you prefer LLDB debugging. On Windows, the Microsoft extension handles MSVC debugging.</li></ul>
+      <p>Avoid installing several competing C++ language-server extensions at once. Duplicate analyzers can produce conflicting diagnostics and waste CPU.</p>
+      <h3>2. Open a folder, not just a file</h3>
+      <pre><code>mkdir editor-check
+cd editor-check
+code .</code></pre>
+      <p>Opening the folder gives VS Code a project boundary for settings, tasks and debugging. Create <code>main.cpp</code>:</p>
+      <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    const std::string service_name = "roadmap-api";
+    const int port = 8080;
+    std::cout &lt;&lt; service_name &lt;&lt; " listens on " &lt;&lt; port &lt;&lt; '\n';
+}</code></pre>
+      <h3>3. Configure a build task</h3>
+      <p>Create <code>.vscode/tasks.json</code>. Use <code>clang++</code> on macOS or <code>g++</code> on Linux.</p>
+      <pre><code>{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build current project",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "-std=c++20", "-Wall", "-Wextra", "-Wpedantic",
+        "-g", "${workspaceFolder}/main.cpp",
+        "-o", "${workspaceFolder}/app"
+      ],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}</code></pre>
+      <p>Run <strong>Terminal → Run Build Task</strong>. The <code>-g</code> flag includes debug information so a debugger can map machine instructions back to source lines.</p>
+      <h3>4. Configure debugging</h3>
+      <p>Create <code>.vscode/launch.json</code> for LLDB:</p>
+      <pre><code>{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug app",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/app",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build current project"
+    }
+  ]
+}</code></pre>
+      <p>Set a breakpoint on the <code>std::cout</code> line and start debugging. Confirm the program pauses and that you can inspect <code>service_name</code> and <code>port</code>.</p>
+      <div class="note"><strong>Windows/MSVC:</strong> Step 3 moves the project to CMake, which lets CMake Tools select MSVC cleanly. For this step, use the “C++: cl.exe build and debug active file” configuration generated by VS Code.</div>
+      <h3>5. Add formatting</h3>
+      <p>Create <code>.clang-format</code>:</p>
+      <pre><code>BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 100
+SortIncludes: CaseSensitive</code></pre>
+      <p>Enable <strong>Format on Save</strong>. The file makes formatting deterministic across machines and editors.</p>
+      <h2 id="clion-2">Path B: CLion</h2>
+      <ol><li>Install CLion and open the project folder.</li><li>Under <strong>Settings → Build, Execution, Deployment → Toolchains</strong>, confirm that the C++ compiler, debugger and CMake entries are valid.</li><li>Create the <code>CMakeLists.txt</code> from Step 3 below, or let CLion create a C++ executable project.</li><li>Wait for indexing to finish. Red code during initial indexing is not necessarily a compiler problem.</li><li>Choose the executable run configuration, set a breakpoint, then choose <strong>Debug</strong>.</li><li>Inspect <code>service_name</code> and <code>port</code> in the variables pane.</li></ol>
+      <p>CLion uses the project’s CMake model instead of inventing a separate build definition. The IDE and terminal therefore build the same targets.</p>
+      <h2 id="model-2">Understand the layers</h2>
+      <ul><li>The <strong>editor</strong> changes text.</li><li>The <strong>language service</strong> indexes code and offers completion.</li><li>The <strong>compiler</strong> decides whether the program is valid.</li><li>The <strong>build system</strong> decides which commands to run.</li><li>The <strong>debugger</strong> controls a running executable and inspects its state.</li></ul>
+      <p class="why"><strong>Why this distinction matters:</strong> an editor warning is not always a compiler error. If red squiggles disagree with a successful terminal build, the editor’s project configuration is probably stale or incomplete.</p>
+      <h2 id="done-2">Completion checklist</h2>
+      <ul class="checklist"><li>The editor opens the entire project folder.</li><li>Go-to-definition and completion work for standard-library symbols.</li><li>The project builds with C++20 and warning flags.</li><li>A breakpoint pauses the program.</li><li>You can inspect local variables during the pause.</li><li>Saving applies the shared formatting rules.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://code.visualstudio.com/docs/languages/cpp" target="_blank" rel="noreferrer">VS Code C++ documentation</a></li><li><a href="https://code.visualstudio.com/docs/cpp/config-clang-mac" target="_blank" rel="noreferrer">Configure Clang on macOS in VS Code</a></li><li><a href="https://www.jetbrains.com/help/clion/quick-start-guide.html" target="_blank" rel="noreferrer">CLion quick start guide</a></li><li><a href="https://clang.llvm.org/docs/ClangFormatStyleOptions.html" target="_blank" rel="noreferrer">ClangFormat style options</a></li></ul></section>
+      <div class="next"><a href="?step=1">← Previous</a><a href="?step=3">Next: Install CMake →</a></div>
+    </article>
+    <article class="article" data-step="3">
+      <div class="kicker">Step 3 of 200 · Modern C++</div>
+      <h1>Install and use CMake</h1>
+      <p class="lede">Replace one-off compiler commands with a reproducible build definition that works from the terminal, inside an IDE and later in continuous integration.</p>
+      <div class="outcome"><strong>Definition of done:</strong> CMake configures a separate build directory, builds a named executable target with C++20 and warnings, and the executable runs successfully.</div>
+      <h2 id="why-3">Why a build system exists</h2>
+      <p>A real backend will have dozens of source files, libraries, tests and third-party dependencies. Typing one enormous compiler command is fragile. CMake describes targets and their requirements, then generates the concrete build files for Ninja, Make, Visual Studio or Xcode.</p>
+      <p>CMake has two stages:</p>
+      <ol><li><strong>Configure/generate:</strong> read <code>CMakeLists.txt</code>, detect the toolchain and produce a build tree.</li><li><strong>Build:</strong> invoke the generated native build system to compile only what changed and link the targets.</li></ol>
+      <h2 id="install-3">Install CMake</h2>
+      <h3>macOS with Homebrew</h3>
+      <pre><code>brew install cmake ninja
+cmake --version
+ninja --version</code></pre>
+      <h3>Ubuntu or Debian</h3>
+      <pre><code>sudo apt update
+sudo apt install cmake ninja-build
+cmake --version</code></pre>
+      <h3>Fedora</h3>
+      <pre><code>sudo dnf install cmake ninja-build
+cmake --version</code></pre>
+      <h3>Windows</h3>
+      <p>Install CMake from the Visual Studio Installer’s C++ workload or from cmake.org. Allow the installer to add CMake to <code>PATH</code>. Open a fresh terminal and run <code>cmake --version</code>.</p>
+      <div class="note"><strong>Version target:</strong> use CMake 3.20 or newer for this roadmap. The project declares 3.20 as its minimum so its commands have predictable behavior.</div>
+      <h2 id="project-3">Create a minimal CMake project</h2>
+      <p>Create this structure:</p>
+      <pre><code>cmake-check/
+├── CMakeLists.txt
+└── src/
+    └── main.cpp</code></pre>
+      <p><code>src/main.cpp</code>:</p>
+      <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Built by CMake\n";
+}</code></pre>
+      <p><code>CMakeLists.txt</code>:</p>
+      <pre><code>cmake_minimum_required(VERSION 3.20)
+
+project(cpp_backend_roadmap
+    VERSION 0.1.0
+    LANGUAGES CXX
+)
+
+add_executable(roadmap_app
+    src/main.cpp
+)
+
+target_compile_features(roadmap_app PRIVATE cxx_std_20)
+
+if(MSVC)
+    target_compile_options(roadmap_app PRIVATE /W4 /permissive-)
+else()
+    target_compile_options(roadmap_app PRIVATE -Wall -Wextra -Wpedantic)
+endif()</code></pre>
+      <h2 id="explain-3">Read the build definition line by line</h2>
+      <ul><li><code>cmake_minimum_required</code> defines the oldest CMake behavior the project accepts.</li><li><code>project</code> names the project, gives it a version and enables only C++.</li><li><code>add_executable</code> creates a target named <code>roadmap_app</code> from its source files.</li><li><code>target_compile_features</code> requests C++20 for this target.</li><li>The compiler check assigns comparable warning levels for MSVC and Clang/GCC.</li><li><code>PRIVATE</code> means this requirement belongs to the target and does not propagate to targets that consume it.</li></ul>
+      <div class="why"><strong>Why target-based CMake?</strong> Modern CMake models each executable or library as a target with its own sources, include paths, features and dependencies. This scales far better than global flags and directory-wide settings.</div>
+      <h2 id="build-3">Configure, build and run</h2>
+      <p>From the project root:</p>
+      <pre><code>cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
+cmake --build build
+./build/roadmap_app</code></pre>
+      <p>On Windows the executable may be <code>build\roadmap_app.exe</code>. With a multi-configuration Visual Studio generator, use:</p>
+      <pre><code>cmake -S . -B build
+cmake --build build --config Debug
+.\build\Debug\roadmap_app.exe</code></pre>
+      <ul><li><code>-S .</code> selects the current source directory.</li><li><code>-B build</code> keeps generated files in <code>build/</code>.</li><li><code>-G Ninja</code> chooses Ninja explicitly. Omit it to use the platform default.</li><li><code>cmake --build</code> is generator-independent; it works with Ninja, Make or MSBuild.</li></ul>
+      <h2 id="clean-3">Keep generated files out of source control</h2>
+      <p>Add this to <code>.gitignore</code>:</p>
+      <pre><code>/build/</code></pre>
+      <p>The build directory is disposable. If configuration becomes confused, remove that specific <code>build/</code> directory and configure again. Never edit generated files inside it.</p>
+      <div class="warning"><strong>Common mistake:</strong> running CMake without <code>-B build</code> creates generated files beside your source. An out-of-source build keeps the repository clean and makes Debug and Release build trees easy to separate.</div>
+      <h2 id="done-3">Completion checklist</h2>
+      <ul class="checklist"><li><code>cmake --version</code> works.</li><li>The source tree contains only authored files; generated output is in <code>build/</code>.</li><li>Configure and build complete without warnings.</li><li>The executable prints <code>Built by CMake</code>.</li><li>You can explain configure vs build and source tree vs build tree.</li><li><code>/build/</code> is ignored by Git.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://cmake.org/cmake/help/latest/guide/tutorial/" target="_blank" rel="noreferrer">Official CMake tutorial</a></li><li><a href="https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html" target="_blank" rel="noreferrer">CMake build-system model</a></li><li><a href="https://cmake.org/cmake/help/latest/manual/cmake.1.html" target="_blank" rel="noreferrer">CMake command-line reference</a></li><li><a href="https://ninja-build.org/manual.html" target="_blank" rel="noreferrer">Ninja manual</a></li></ul></section>
+      <div class="next"><a href="?step=2">← Previous</a><a href="?step=4">Next: Install Git →</a></div>
+    </article>
+    <article class="article" data-step="4">
+      <div class="kicker">Step 4 of 200 · Modern C++</div>
+      <h1>Install and configure Git</h1>
+      <p class="lede">Set up version control, learn the working-tree → staging-area → commit flow, and make a small history you can inspect and recover from.</p>
+      <div class="outcome"><strong>Definition of done:</strong> Git is installed, your author identity is configured, line endings are sensible for your OS, and you can create, inspect and restore a local commit safely.</div>
+      <h2 id="purpose-4">What Git tracks</h2>
+      <p>Git stores snapshots of a project. Your <strong>working tree</strong> contains current files. The <strong>staging area</strong> is the exact proposed contents of the next snapshot. A <strong>commit</strong> stores that snapshot with its parent, author, time and message.</p>
+      <p class="why"><strong>Why staging exists:</strong> it lets you build one focused commit from selected changes even when the working tree contains unrelated experiments.</p>
+      <h2 id="install-4">Install Git</h2>
+      <h3>macOS</h3>
+      <pre><code>xcode-select --install
+git --version</code></pre>
+      <p>If you installed the compiler in Step 1, Git is likely already present. Homebrew’s newer release is also available with <code>brew install git</code>.</p>
+      <h3>Ubuntu or Debian</h3>
+      <pre><code>sudo apt update
+sudo apt install git
+git --version</code></pre>
+      <h3>Fedora</h3>
+      <pre><code>sudo dnf install git
+git --version</code></pre>
+      <h3>Windows</h3>
+      <p>Install Git for Windows from git-scm.com. The default choices are suitable. Enable Git from the command line, choose your preferred editor, and keep the recommended Windows/Unix line-ending conversion. Then open a new terminal and run <code>git --version</code>.</p>
+      <h2 id="config-4">Configure your identity and defaults</h2>
+      <p>Use the name and email you want attached to future commits:</p>
+      <pre><code>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --global init.defaultBranch main
+git config --global core.editor "code --wait"</code></pre>
+      <p>Inspect the result and where each setting came from:</p>
+      <pre><code>git config --global --list
+git config --list --show-origin</code></pre>
+      <p>If you use CLion, omit the <code>core.editor</code> line or choose another terminal editor.</p>
+      <h3>Line-ending policy</h3>
+      <p>Use one of these global defaults:</p>
+      <pre><code># macOS or Linux
+git config --global core.autocrlf input
+
+# Windows
+git config --global core.autocrlf true</code></pre>
+      <p>Later, a repository-level <code>.gitattributes</code> file will define the canonical policy for the whole team. This global setting reduces accidental line-ending-only diffs meanwhile.</p>
+      <h2 id="practice-4">Practice the complete local workflow</h2>
+      <pre><code>mkdir git-practice
+cd git-practice
+git init
+printf "# Git Practice\n" &gt; README.md
+git status
+git add README.md
+git diff --staged
+git commit -m "Add project readme"
+git log --oneline --decorate</code></pre>
+      <p>On Windows PowerShell, replace the <code>printf</code> line with:</p>
+      <pre><code>Set-Content -Path README.md -Value "# Git Practice"</code></pre>
+      <p>Now edit the file and observe each view:</p>
+      <pre><code>git status
+git diff
+git add README.md
+git diff --staged</code></pre>
+      <ul><li><code>git diff</code> shows unstaged differences: working tree versus staging area.</li><li><code>git diff --staged</code> shows what the next commit would contain: staging area versus current commit.</li><li><code>git status</code> is the safe first command whenever you are uncertain.</li></ul>
+      <h2 id="undo-4">Learn one safe undo operation</h2>
+      <p>Remove the modified file from the staging area without discarding its content:</p>
+      <pre><code>git restore --staged README.md
+git status</code></pre>
+      <p>This moves only the index back to the committed version; your edits remain in the working tree. Do not reach for <code>reset --hard</code> while learning—it can permanently discard uncommitted work.</p>
+      <h2 id="ignore-4">Create a C++-appropriate ignore file</h2>
+      <pre><code># Build directories
+/build/
+/cmake-build-*/
+
+# Compiled artifacts
+*.o
+*.obj
+*.exe
+*.out
+
+# Editor and OS noise
+.DS_Store
+.vscode/*.log
+.idea/</code></pre>
+      <p>Do not ignore source code, <code>CMakeLists.txt</code> or a dependency lock file. Ignore generated artifacts because they can be reproduced from committed source.</p>
+      <div class="warning"><strong>Common mistake:</strong> adding secrets and then putting their filename in <code>.gitignore</code>. Ignore rules do not remove a file from existing commit history. Never commit credentials in the first place.</div>
+      <h2 id="done-4">Completion checklist</h2>
+      <ul class="checklist"><li><code>git --version</code> works.</li><li>Name, email and default branch are configured.</li><li>You can explain working tree, staging area and commit.</li><li>You created and inspected a commit.</li><li>You used <code>git restore --staged</code> without losing edits.</li><li>You understand why generated C++ build output is ignored.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank" rel="noreferrer">Pro Git: Installing Git</a></li><li><a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository" target="_blank" rel="noreferrer">Pro Git: Recording changes</a></li><li><a href="https://git-scm.com/docs/git-config" target="_blank" rel="noreferrer">git-config reference</a></li><li><a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noreferrer">gitignore reference</a></li></ul></section>
+      <div class="next"><a href="?step=3">← Previous</a><a href="?step=5">Next: Create the repository →</a></div>
+    </article>
+    <article class="article" data-step="5">
+      <div class="kicker">Step 5 of 200 · Modern C++</div>
+      <h1>Create the roadmap repository</h1>
+      <p class="lede">Build the long-lived project workspace that will hold every experiment, exercise and backend service in this course, then publish its clean initial history.</p>
+      <div class="outcome"><strong>Definition of done:</strong> a structured CMake project builds locally, repository rules are committed, the remote GitHub repository contains the same <code>main</code> commit, and no generated files or secrets are tracked.</div>
+      <h2 id="shape-5">Choose a structure that can grow</h2>
+      <p>Create one repository with small applications and reusable code separated from generated output:</p>
+      <pre><code>cpp-backend-roadmap/
+├── CMakeLists.txt
+├── README.md
+├── .clang-format
+├── .gitattributes
+├── .gitignore
+├── apps/
+│   └── hello/
+│       ├── CMakeLists.txt
+│       └── main.cpp
+├── include/
+├── src/
+├── tests/
+└── notes/</code></pre>
+      <ul><li><code>apps/</code> holds runnable exercises and services.</li><li><code>include/</code> and <code>src/</code> will hold reusable library code.</li><li><code>tests/</code> will hold automated tests from Step 182 onward.</li><li><code>notes/</code> records decisions and what you learned; writing is part of the roadmap’s definition of done.</li><li><code>build/</code> is deliberately absent because it is generated and ignored.</li></ul>
+      <h2 id="create-5">Create the files</h2>
+      <pre><code>mkdir -p cpp-backend-roadmap/apps/hello cpp-backend-roadmap/include \
+  cpp-backend-roadmap/src cpp-backend-roadmap/tests cpp-backend-roadmap/notes
+cd cpp-backend-roadmap
+git init</code></pre>
+      <p>On Windows PowerShell:</p>
+      <pre><code>New-Item -ItemType Directory -Force cpp-backend-roadmap/apps/hello,
+  cpp-backend-roadmap/include, cpp-backend-roadmap/src,
+  cpp-backend-roadmap/tests, cpp-backend-roadmap/notes
+Set-Location cpp-backend-roadmap
+git init</code></pre>
+      <h3>Root CMakeLists.txt</h3>
+      <pre><code>cmake_minimum_required(VERSION 3.20)
+project(cpp_backend_roadmap VERSION 0.1.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_subdirectory(apps/hello)</code></pre>
+      <p><code>CMAKE_CXX_EXTENSIONS OFF</code> asks for standard C++ instead of compiler-specific GNU extensions, improving portability.</p>
+      <h3>apps/hello/CMakeLists.txt</h3>
+      <pre><code>add_executable(hello_backend main.cpp)
+target_compile_features(hello_backend PRIVATE cxx_std_20)
+
+if(MSVC)
+    target_compile_options(hello_backend PRIVATE /W4 /permissive-)
+else()
+    target_compile_options(hello_backend PRIVATE -Wall -Wextra -Wpedantic)
+endif()</code></pre>
+      <h3>apps/hello/main.cpp</h3>
+      <pre><code>#include &lt;iostream&gt;
+#include &lt;string_view&gt;
+
+int main() {
+    constexpr std::string_view course{"C++ Backend Roadmap"};
+    std::cout &lt;&lt; course &lt;&lt; " is ready.\n";
+}</code></pre>
+      <p><code>std::string_view</code> is a lightweight, non-owning view of string data. You do not need to master it yet; this use is safe because the viewed string literal exists for the program’s entire lifetime.</p>
+      <h3>.gitignore</h3>
+      <pre><code>/build/
+/build-*/
+/cmake-build-*/
+.DS_Store
+*.o
+*.obj
+*.exe
+compile_commands.json</code></pre>
+      <h3>.gitattributes</h3>
+      <pre><code>* text=auto
+*.cpp text eol=lf
+*.hpp text eol=lf
+*.h text eol=lf
+*.cmake text eol=lf
+CMakeLists.txt text eol=lf</code></pre>
+      <p>This creates a repository-wide line-ending contract. Git normalizes source files to LF regardless of the contributor’s operating system.</p>
+      <h3>.clang-format</h3>
+      <pre><code>BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 100
+SortIncludes: CaseSensitive</code></pre>
+      <h3>README.md</h3>
+      <pre><code># C++ Backend Roadmap
+
+A learning repository for building modern C++ backend systems step by step.
+
+## Build
+
+    cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+    cmake --build build
+
+## Run
+
+    ./build/apps/hello/hello_backend
+
+## Learning rule
+
+Learn → implement → test → document → move on.</code></pre>
+      <h2 id="verify-5">Build before committing</h2>
+      <pre><code>cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build
+./build/apps/hello/hello_backend
+git status --short</code></pre>
+      <p>On Windows with a multi-configuration generator, run the executable from <code>build\apps\hello\Debug\hello_backend.exe</code>. The final status output must not include <code>build/</code>. If it does, fix <code>.gitignore</code> before committing.</p>
+      <h2 id="commit-5">Create a clean initial history</h2>
+      <pre><code>git add CMakeLists.txt README.md .clang-format .gitattributes .gitignore apps
+git diff --staged
+git commit -m "Initialize C++ backend roadmap"
+git status
+git log --oneline --decorate -1</code></pre>
+      <p>Review <code>git diff --staged</code> before committing. This is the last easy moment to catch a generated file, machine-specific path or secret.</p>
+      <h2 id="publish-5">Publish to GitHub</h2>
+      <h3>With GitHub CLI</h3>
+      <pre><code>gh auth login
+gh repo create cpp-backend-roadmap --public --source=. --remote=origin --push</code></pre>
+      <h3>With the GitHub website</h3>
+      <ol><li>Create a repository named <code>cpp-backend-roadmap</code>.</li><li>Do not initialize it with a README, license or <code>.gitignore</code>; those files already exist locally.</li><li>Copy the repository URL and run:</li></ol>
+      <pre><code>git remote add origin https://github.com/YOUR-USERNAME/cpp-backend-roadmap.git
+git push -u origin main</code></pre>
+      <p>Verify the remote relationship:</p>
+      <pre><code>git remote -v
+git branch -vv</code></pre>
+      <div class="why"><strong>Why the first push matters:</strong> <code>-u origin main</code> records the upstream branch. Afterwards, plain <code>git push</code> and <code>git pull</code> know which remote branch to use.</div>
+      <h2 id="safety-5">Run a final safety check</h2>
+      <pre><code>git ls-files
+git status --ignored --short</code></pre>
+      <p><code>git ls-files</code> should show source, configuration and documentation—not <code>build/</code>, executables, editor state or credentials. <code>git status --ignored</code> lets you confirm that the build directory is being ignored for the intended reason.</p>
+      <div class="warning"><strong>Never commit:</strong> API keys, access tokens, passwords, private keys, database credentials or production <code>.env</code> files. A later deletion does not erase them from Git history.</div>
+      <h2 id="done-5">Completion checklist</h2>
+      <ul class="checklist"><li>The repository has the planned directory structure.</li><li>A clean clone can be configured and built using the README commands.</li><li>The hello target compiles with C++20 and warnings enabled.</li><li>Generated build files are ignored.</li><li>The initial commit contains only intentional files.</li><li>The GitHub <code>main</code> branch matches the local commit.</li><li>The README states the learning rule and exact build/run commands.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository" target="_blank" rel="noreferrer">GitHub: Create a new repository</a></li><li><a href="https://cli.github.com/manual/gh_repo_create" target="_blank" rel="noreferrer">GitHub CLI: gh repo create</a></li><li><a href="https://cmake.org/cmake/help/latest/command/add_subdirectory.html" target="_blank" rel="noreferrer">CMake add_subdirectory reference</a></li><li><a href="https://git-scm.com/docs/gitattributes" target="_blank" rel="noreferrer">gitattributes reference</a></li></ul></section>
+      <div class="next"><a href="?step=4">← Previous</a><a href="../">Return to roadmap →</a></div>
+    </article>
+  </div><aside class="toc" aria-label="On this page"><strong>On this page</strong><div id="toc-links"></div></aside></main>
+  <script>
+    const params=new URLSearchParams(location.search);let step=Number(params.get('step'));if(!Number.isInteger(step)||step<1||step>5)step=1;
+    const article=document.querySelector(`[data-step="${step}"]`);article.classList.add('active');document.querySelector(`[data-nav="${step}"]`).classList.add('active');
+    const heading=article.querySelector('h1').textContent;document.title=`Step ${step}: ${heading} · C++ Backend Roadmap`;
+    document.querySelector('#toc-links').innerHTML=[...article.querySelectorAll('h2[id]')].map(h=>`<a href="#${h.id}">${h.textContent}</a>`).join('');
+  </script>
+</body>
+</html>
