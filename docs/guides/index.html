@@ -7,11 +7,11 @@
   <title>Step Guide · C++ Backend Roadmap</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <style>
-    :root{--bg:#091224;--ink:#e9f0ff;--muted:#a9b6cf;--surface:#111c35;--surface2:#172747;--line:#30446b;--cyan:#61dafb;--gold:#f7c948;--green:#61d394;--code:#060d1b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.72 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--cyan)}.topbar{position:sticky;top:0;z-index:10;background:rgba(9,18,36,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topbar-inner{max-width:1120px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.back{text-decoration:none;font-weight:800}.step-picker{display:flex;gap:6px;align-items:center}.step-picker a{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--line);border-radius:9px;text-decoration:none;color:var(--muted);font-weight:800;font-size:.86rem}.step-picker a.active{color:#06101f;background:var(--cyan);border-color:var(--cyan)}.layout{max-width:1120px;margin:auto;padding:48px 22px 80px;display:grid;grid-template-columns:minmax(0,760px) 260px;gap:54px}.article{display:none}.article.active{display:block}.kicker{text-transform:uppercase;letter-spacing:.14em;color:var(--cyan);font-size:.75rem;font-weight:850}.article h1{font-size:clamp(2.3rem,6vw,4.7rem);line-height:1.02;letter-spacing:-.055em;margin:10px 0 18px}.lede{font-size:1.17rem;color:#c8d5eb;margin:0 0 30px;max-width:700px}.outcome{background:linear-gradient(135deg,#13254a,#12203b);border:1px solid #365788;border-radius:16px;padding:20px 22px;margin:28px 0}.outcome strong{color:var(--gold)}h2{font-size:1.65rem;line-height:1.25;letter-spacing:-.025em;margin:46px 0 14px;padding-top:8px}h3{font-size:1.12rem;margin:28px 0 8px;color:#dce7fa}p{margin:0 0 17px}ul,ol{padding-left:1.4rem}li{margin:7px 0}.why{border-left:3px solid var(--cyan);padding:4px 0 4px 18px;color:#c6d3ea;margin:22px 0}.why strong{color:var(--cyan)}pre{background:var(--code);border:1px solid #263b62;border-radius:13px;padding:17px 18px;overflow:auto;line-height:1.5;font-size:.89rem;margin:15px 0 22px;box-shadow:inset 0 1px rgba(255,255,255,.035)}code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}p code,li code{background:#1a2a49;border:1px solid #304970;border-radius:5px;padding:.1em .35em;color:#dff6ff;font-size:.9em}.note,.warning{border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:20px 0;background:var(--surface)}.note strong{color:var(--green)}.warning strong{color:var(--gold)}.checklist{list-style:none;padding:0}.checklist li{position:relative;padding:10px 12px 10px 42px;background:var(--surface);border:1px solid var(--line);border-radius:10px;margin:8px 0}.checklist li:before{content:'□';position:absolute;left:15px;color:var(--green);font-weight:900}.refs{margin-top:55px;border-top:1px solid var(--line);padding-top:22px}.refs h2{margin-top:0}.refs li{margin:9px 0}.next{display:flex;justify-content:space-between;gap:12px;margin-top:38px;padding-top:22px;border-top:1px solid var(--line)}.next a{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:10px 13px;text-decoration:none;font-weight:750}.toc{position:sticky;top:82px;align-self:start;border-left:1px solid var(--line);padding-left:22px}.toc strong{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.toc a{display:block;text-decoration:none;color:var(--muted);padding:7px 0;font-size:.9rem}.toc a:hover{color:var(--cyan)}@media(max-width:850px){.layout{grid-template-columns:1fr;padding-top:30px}.toc{display:none}.topbar-inner{padding-inline:14px}.article h1{font-size:2.55rem}}@media(max-width:480px){body{font-size:16px}.step-picker a{width:30px;height:30px}.topbar-inner{align-items:flex-start}.layout{padding-inline:15px}.next{flex-direction:column}.article h1{font-size:2.2rem}}
+    :root{--bg:#091224;--ink:#e9f0ff;--muted:#a9b6cf;--surface:#111c35;--surface2:#172747;--line:#30446b;--cyan:#61dafb;--gold:#f7c948;--green:#61d394;--code:#060d1b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.72 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--cyan)}.topbar{position:sticky;top:0;z-index:10;background:rgba(9,18,36,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topbar-inner{max-width:1120px;margin:auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.back{text-decoration:none;font-weight:800;white-space:nowrap}.step-picker{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.step-picker a{display:grid;place-items:center;min-width:31px;height:31px;padding:0 5px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--muted);font-weight:800;font-size:.8rem}.step-picker a.active{color:#06101f;background:var(--cyan);border-color:var(--cyan)}.layout{max-width:1120px;margin:auto;padding:48px 22px 80px;display:grid;grid-template-columns:minmax(0,760px) 260px;gap:54px}.article{display:none}.article.active{display:block}.kicker{text-transform:uppercase;letter-spacing:.14em;color:var(--cyan);font-size:.75rem;font-weight:850}.article h1{font-size:clamp(2.3rem,6vw,4.7rem);line-height:1.02;letter-spacing:-.055em;margin:10px 0 18px}.lede{font-size:1.17rem;color:#c8d5eb;margin:0 0 30px;max-width:700px}.outcome{background:linear-gradient(135deg,#13254a,#12203b);border:1px solid #365788;border-radius:16px;padding:20px 22px;margin:28px 0}.outcome strong{color:var(--gold)}h2{font-size:1.65rem;line-height:1.25;letter-spacing:-.025em;margin:46px 0 14px;padding-top:8px}h3{font-size:1.12rem;margin:28px 0 8px;color:#dce7fa}p{margin:0 0 17px}ul,ol{padding-left:1.4rem}li{margin:7px 0}.why{border-left:3px solid var(--cyan);padding:4px 0 4px 18px;color:#c6d3ea;margin:22px 0}.why strong{color:var(--cyan)}pre{background:var(--code);border:1px solid #263b62;border-radius:13px;padding:17px 18px;overflow:auto;line-height:1.5;font-size:.89rem;margin:15px 0 22px;box-shadow:inset 0 1px rgba(255,255,255,.035)}code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}p code,li code{background:#1a2a49;border:1px solid #304970;border-radius:5px;padding:.1em .35em;color:#dff6ff;font-size:.9em}.note,.warning{border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:20px 0;background:var(--surface)}.note strong{color:var(--green)}.warning strong{color:var(--gold)}.checklist{list-style:none;padding:0}.checklist li{position:relative;padding:10px 12px 10px 42px;background:var(--surface);border:1px solid var(--line);border-radius:10px;margin:8px 0}.checklist li:before{content:'□';position:absolute;left:15px;color:var(--green);font-weight:900}.refs{margin-top:55px;border-top:1px solid var(--line);padding-top:22px}.refs h2{margin-top:0}.refs li{margin:9px 0}.next{display:flex;justify-content:space-between;gap:12px;margin-top:38px;padding-top:22px;border-top:1px solid var(--line)}.next a{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:10px 13px;text-decoration:none;font-weight:750}.toc{position:sticky;top:108px;align-self:start;border-left:1px solid var(--line);padding-left:22px}.toc strong{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.toc a{display:block;text-decoration:none;color:var(--muted);padding:7px 0;font-size:.9rem}.toc a:hover{color:var(--cyan)}@media(max-width:850px){.layout{grid-template-columns:1fr;padding-top:30px}.toc{display:none}.topbar-inner{padding-inline:14px}.article h1{font-size:2.55rem}}@media(max-width:620px){.topbar-inner{display:block}.back{display:block;margin-bottom:7px}.step-picker{justify-content:flex-start}.step-picker span{display:none}}@media(max-width:480px){body{font-size:16px}.step-picker a{min-width:29px;height:29px}.layout{padding-inline:15px}.next{flex-direction:column}.article h1{font-size:2.2rem}}
   </style>
 </head>
 <body>
-  <nav class="topbar" aria-label="Guide navigation"><div class="topbar-inner"><a class="back" href="../">← Roadmap</a><div class="step-picker" aria-label="Available detailed guides"><span>Step</span><a href="?step=1" data-nav="1">1</a><a href="?step=2" data-nav="2">2</a><a href="?step=3" data-nav="3">3</a><a href="?step=4" data-nav="4">4</a><a href="?step=5" data-nav="5">5</a></div></div></nav>
+  <nav class="topbar" aria-label="Guide navigation"><div class="topbar-inner"><a class="back" href="../">← Roadmap</a><div class="step-picker" aria-label="Available detailed guides"><span>Step</span><a href="?step=1" data-nav="1">1</a><a href="?step=2" data-nav="2">2</a><a href="?step=3" data-nav="3">3</a><a href="?step=4" data-nav="4">4</a><a href="?step=5" data-nav="5">5</a><a href="?step=6" data-nav="6">6</a><a href="?step=7" data-nav="7">7</a><a href="?step=8" data-nav="8">8</a><a href="?step=9" data-nav="9">9</a><a href="?step=10" data-nav="10">10</a><a href="?step=11" data-nav="11">11</a><a href="?step=12" data-nav="12">12</a><a href="?step=13" data-nav="13">13</a><a href="?step=14" data-nav="14">14</a><a href="?step=15" data-nav="15">15</a></div></div></nav>
   <main class="layout"><div>
     <article class="article" data-step="1">
       <div class="kicker">Step 1 of 200 · Modern C++</div>
@@ -89,6 +89,7 @@ code .</code></pre>
       <p>Opening the folder gives VS Code a project boundary for settings, tasks and debugging. Create <code>main.cpp</code>:</p>
       <pre><code>#include &lt;iostream&gt;
 #include &lt;string&gt;
+#include &lt;utility&gt;
 
 int main() {
     const std::string service_name = "roadmap-api";
@@ -444,11 +445,745 @@ git status --ignored --short</code></pre>
       <h2 id="done-5">Completion checklist</h2>
       <ul class="checklist"><li>The repository has the planned directory structure.</li><li>A clean clone can be configured and built using the README commands.</li><li>The hello target compiles with C++20 and warnings enabled.</li><li>Generated build files are ignored.</li><li>The initial commit contains only intentional files.</li><li>The GitHub <code>main</code> branch matches the local commit.</li><li>The README states the learning rule and exact build/run commands.</li></ul>
       <section class="refs"><h2>References</h2><ul><li><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository" target="_blank" rel="noreferrer">GitHub: Create a new repository</a></li><li><a href="https://cli.github.com/manual/gh_repo_create" target="_blank" rel="noreferrer">GitHub CLI: gh repo create</a></li><li><a href="https://cmake.org/cmake/help/latest/command/add_subdirectory.html" target="_blank" rel="noreferrer">CMake add_subdirectory reference</a></li><li><a href="https://git-scm.com/docs/gitattributes" target="_blank" rel="noreferrer">gitattributes reference</a></li></ul></section>
-      <div class="next"><a href="?step=4">← Previous</a><a href="../">Return to roadmap →</a></div>
+      <div class="next"><a href="?step=4">← Previous</a><a href="?step=6">Next: Compilation and linking →</a></div>
     </article>
+
+    <article class="article" data-step="6">
+      <div class="kicker">Step 6 of 200 · Modern C++</div>
+      <h1>Understand compilation vs linking</h1>
+      <p class="lede">Take a two-file program through preprocessing, compilation, object generation and linking so compiler errors and linker errors stop looking like the same problem.</p>
+      <div class="outcome"><strong>Definition of done:</strong> you can compile source files separately, inspect their object files, link them into one executable, and deliberately produce and diagnose both a compiler error and a linker error.</div>
+      <h2 id="pipeline-6">The build pipeline</h2>
+      <ol><li><strong>Preprocessing</strong> expands <code>#include</code> and macros.</li><li><strong>Compilation</strong> parses one translation unit, type-checks it and emits assembly or object code.</li><li><strong>Assembly</strong> turns assembly into machine instructions inside an object file.</li><li><strong>Linking</strong> resolves references between object files and libraries and produces the executable.</li></ol>
+      <p>A translation unit is one source file after preprocessing. Each <code>.cpp</code> file is compiled independently; the linker is the first stage that sees the program as a whole.</p>
+      <h2 id="files-6">Build a two-file program</h2>
+      <p>Create <code>math.cpp</code>:</p>
+      <pre><code>int add(int left, int right) {
+    return left + right;
+}</code></pre>
+      <p>Create <code>main.cpp</code>:</p>
+      <pre><code>#include &lt;iostream&gt;
+
+int add(int left, int right);  // declaration
+
+int main() {
+    std::cout &lt;&lt; add(20, 22) &lt;&lt; '\n';
+}</code></pre>
+      <p>Compile without linking by using <code>-c</code>:</p>
+      <pre><code>clang++ -std=c++20 -Wall -Wextra -Wpedantic -c main.cpp -o main.o
+clang++ -std=c++20 -Wall -Wextra -Wpedantic -c math.cpp -o math.o
+clang++ main.o math.o -o app
+./app</code></pre>
+      <p>Use <code>g++</code> instead of <code>clang++</code> on GCC. MSVC equivalents are <code>cl /c main.cpp math.cpp</code> followed by <code>link main.obj math.obj /OUT:app.exe</code>. The result should print <code>42</code>.</p>
+      <h2 id="inspect-6">Inspect the intermediate state</h2>
+      <pre><code>clang++ -std=c++20 -E main.cpp &gt; main.ii
+nm -C main.o | grep add
+nm -C math.o | grep add</code></pre>
+      <p>The preprocessed file is large because it contains expanded headers. In the symbol listing, <code>main.o</code> has an undefined reference to <code>add(int, int)</code>, while <code>math.o</code> defines it. The linker matches those symbols.</p>
+      <h2 id="errors-6">Trigger both classes of error</h2>
+      <h3>Compiler error</h3>
+      <p>Change the call to <code>add("20", 22)</code>. Compilation fails because the argument types do not match the declaration. No object file is produced.</p>
+      <h3>Linker error</h3>
+      <p>Restore the call, compile both files, then link only <code>main.o</code>:</p>
+      <pre><code>clang++ main.o -o app</code></pre>
+      <p>The source was valid, so compilation succeeded. Linking fails with an undefined-symbol message because no linked object defines <code>add</code>.</p>
+      <div class="why"><strong>Diagnostic rule:</strong> syntax, type and declaration problems are compiler errors. “Undefined reference/symbol,” “duplicate symbol,” and missing-library messages are linker errors.</div>
+      <h2 id="cmake-6">Express the same build in CMake</h2>
+      <pre><code>add_executable(app
+    main.cpp
+    math.cpp
+)
+target_compile_features(app PRIVATE cxx_std_20)</code></pre>
+      <p>CMake still performs the same separate compilations and final link; it simply generates and schedules the commands.</p>
+      <h2 id="done-6">Completion checklist</h2>
+      <ul class="checklist"><li>Two source files produce two object files.</li><li>You linked the object files into a working executable.</li><li>You inspected one preprocessed file and symbol table.</li><li>You can distinguish a compiler error from a linker error.</li><li>You can explain declarations, definitions and unresolved symbols.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html" target="_blank" rel="noreferrer">GCC compilation stages</a></li><li><a href="https://clang.llvm.org/docs/CommandGuide/clang.html" target="_blank" rel="noreferrer">Clang command guide</a></li><li><a href="https://learn.microsoft.com/en-us/cpp/build/reference/compiler-options" target="_blank" rel="noreferrer">MSVC compiler options</a></li><li><a href="https://en.cppreference.com/w/cpp/language/definition" target="_blank" rel="noreferrer">Definitions and the One Definition Rule</a></li></ul></section>
+      <div class="next"><a href="?step=5">← Previous</a><a href="?step=7">Next: Headers and sources →</a></div>
+    </article>
+
+    <article class="article" data-step="7">
+      <div class="kicker">Step 7 of 200 · Modern C++</div>
+      <h1>Learn header/source separation</h1>
+      <p class="lede">Create a small library with a public header and private implementation, then understand include guards, declarations, definitions and dependency boundaries.</p>
+      <div class="outcome"><strong>Definition of done:</strong> your program consumes a function through a header, compiles its implementation separately, links successfully, and remains correct when the header is included twice.</div>
+      <h2 id="roles-7">Give each file one job</h2>
+      <ul><li>A header (<code>.hpp</code>) publishes declarations: the names and types other translation units may use.</li><li>A source file (<code>.cpp</code>) owns definitions: the executable implementation.</li><li>A consuming source includes the header instead of manually repeating declarations.</li></ul>
+      <p class="why"><strong>Why separate them?</strong> Consumers compile against a stable interface while implementation details can change independently. It also prevents declarations from silently drifting apart.</p>
+      <h2 id="library-7">Create a greeting library</h2>
+      <p><code>include/roadmap/greeting.hpp</code>:</p>
+      <pre><code>#pragma once
+
+#include &lt;string&gt;
+#include &lt;string_view&gt;
+
+namespace roadmap {
+std::string make_greeting(std::string_view name);
+}</code></pre>
+      <p><code>src/greeting.cpp</code>:</p>
+      <pre><code>#include "roadmap/greeting.hpp"
+
+namespace roadmap {
+std::string make_greeting(std::string_view name) {
+    return "Hello, " + std::string{name} + "!";
+}
+}</code></pre>
+      <p><code>apps/hello/main.cpp</code>:</p>
+      <pre><code>#include "roadmap/greeting.hpp"
+#include "roadmap/greeting.hpp"  // intentional duplicate test
+
+#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; roadmap::make_greeting("backend engineer") &lt;&lt; '\n';
+}</code></pre>
+      <p><code>#pragma once</code> makes the header’s declarations appear once per translation unit even if include paths reach it multiple times. A portable traditional guard is:</p>
+      <pre><code>#ifndef ROADMAP_GREETING_HPP
+#define ROADMAP_GREETING_HPP
+// declarations
+#endif</code></pre>
+      <h2 id="cmake-7">Build a real library target</h2>
+      <pre><code>add_library(roadmap_core
+    src/greeting.cpp
+)
+
+target_include_directories(roadmap_core
+    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+target_compile_features(roadmap_core PUBLIC cxx_std_20)
+
+add_executable(hello_backend apps/hello/main.cpp)
+target_link_libraries(hello_backend PRIVATE roadmap_core)</code></pre>
+      <p><code>PUBLIC</code> on the include directory means the library and its consumers need that path. <code>PRIVATE</code> linking means <code>hello_backend</code> uses the library but does not promise to re-export it.</p>
+      <h2 id="rules-7">Rules that prevent subtle bugs</h2>
+      <ul><li>Include the matching header first in its <code>.cpp</code> file. This proves the header declares everything the implementation needs.</li><li>Headers must be self-contained: including one in an otherwise empty source file should compile.</li><li>Do not put ordinary non-<code>inline</code> function definitions or global-variable definitions in headers; every includer would create another definition.</li><li>Use forward declarations only when a complete type is not required. Prefer clarity over aggressively reducing includes.</li><li>Never write <code>using namespace ...</code> in a header; it pollutes every file that includes it.</li></ul>
+      <h2 id="experiment-7">Run the failure experiments</h2>
+      <ol><li>Remove <code>src/greeting.cpp</code> from <code>add_library</code>. The final link should fail with an undefined symbol.</li><li>Remove <code>#pragma once</code> and define the same class twice by including the header twice. Compilation should report redefinition.</li><li>Change the header parameter to <code>int</code> without changing the source definition. You now have different functions; compilation or linking exposes the mismatch.</li></ol>
+      <h2 id="done-7">Completion checklist</h2>
+      <ul class="checklist"><li>The public header is self-contained and protected against repeated inclusion.</li><li>The source includes its own matching header first.</li><li>CMake builds a library target and links the executable to it.</li><li>You can explain declaration vs definition.</li><li>You reproduced an undefined-symbol failure by omitting the implementation.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rs-headers" target="_blank" rel="noreferrer">C++ Core Guidelines: Source files</a></li><li><a href="https://en.cppreference.com/w/cpp/preprocessor/include" target="_blank" rel="noreferrer">Source-file inclusion</a></li><li><a href="https://cmake.org/cmake/help/latest/command/target_include_directories.html" target="_blank" rel="noreferrer">target_include_directories</a></li><li><a href="https://cmake.org/cmake/help/latest/command/target_link_libraries.html" target="_blank" rel="noreferrer">target_link_libraries</a></li></ul></section>
+      <div class="next"><a href="?step=6">← Previous</a><a href="?step=8">Next: Namespaces →</a></div>
+    </article>
+    <article class="article" data-step="8">
+      <div class="kicker">Step 8 of 200 · Modern C++</div>
+      <h1>Learn namespaces</h1>
+      <p class="lede">Organize names into intentional domains, avoid collisions between libraries, and learn the few namespace habits that keep headers safe.</p>
+      <div class="outcome"><strong>Definition of done:</strong> you can define and call names in nested namespaces, use aliases locally, explain qualified lookup, and avoid namespace pollution in public headers.</div>
+      <h2 id="problem-8">The collision namespaces solve</h2>
+      <p>Large programs combine standard-library names, third-party libraries and your own modules. Two unrelated components may both define <code>Config</code>, <code>connect</code> or <code>Logger</code>. A namespace adds a logical scope without creating an object.</p>
+      <pre><code>namespace roadmap::network {
+struct Endpoint {
+    std::string host;
+    int port;
+};
+
+void connect(const Endpoint&amp; endpoint);
+}
+
+namespace roadmap::database {
+void connect(std::string_view connection_string);
+}</code></pre>
+      <p>The fully qualified names are <code>roadmap::network::connect</code> and <code>roadmap::database::connect</code>. They coexist because they occupy different namespaces.</p>
+      <h2 id="build-8">Build and call names deliberately</h2>
+      <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;string_view&gt;
+
+namespace roadmap::network {
+struct Endpoint { std::string host; int port; };
+
+void connect(const Endpoint&amp; endpoint) {
+    std::cout &lt;&lt; "TCP " &lt;&lt; endpoint.host &lt;&lt; ':' &lt;&lt; endpoint.port &lt;&lt; '\n';
+}
+}
+
+namespace roadmap::database {
+void connect(std::string_view url) {
+    std::cout &lt;&lt; "DB " &lt;&lt; url &lt;&lt; '\n';
+}
+}
+
+int main() {
+    roadmap::network::Endpoint api{"127.0.0.1", 8080};
+    roadmap::network::connect(api);
+    roadmap::database::connect("postgres://localhost/roadmap");
+}</code></pre>
+      <p>The <code>::</code> scope-resolution operator asks for a name within a scope. Starting with <code>::roadmap</code> requests lookup from the global namespace, which can disambiguate a shadowed name.</p>
+      <h2 id="using-8">Use aliases and using-declarations narrowly</h2>
+      <pre><code>int main() {
+    namespace net = roadmap::network;
+    using roadmap::database::connect;
+
+    net::Endpoint api{"localhost", 8080};
+    net::connect(api);
+    connect("postgres://localhost/roadmap");
+}</code></pre>
+      <p>A namespace alias shortens a long path while preserving where names come from. A using-declaration imports one name. By contrast, <code>using namespace roadmap::network;</code> imports every eligible name and makes collisions more likely.</p>
+      <div class="warning"><strong>Never put a using-directive in a header.</strong> Every translation unit that includes the header would inherit it, including code you do not control. Fully qualify names in public interfaces.</div>
+      <h2 id="anonymous-8">Understand anonymous namespaces</h2>
+      <p>Implementation-only helpers in a <code>.cpp</code> file can use an unnamed namespace:</p>
+      <pre><code>namespace {
+constexpr int default_port = 8080;
+
+bool is_valid_port(int port) {
+    return port &gt; 0 &amp;&amp; port &lt;= 65535;
+}
+}</code></pre>
+      <p>These names have internal linkage: other translation units cannot refer to them. This is useful for private file-level helpers, not public header APIs.</p>
+      <h2 id="design-8">Choose meaningful boundaries</h2>
+      <ul><li>Use a stable project namespace such as <code>roadmap</code>.</li><li>Add subnamespaces for real domains such as <code>network</code>, <code>http</code> and <code>storage</code>.</li><li>Avoid mirroring every folder mechanically if it makes names excessively long.</li><li>Do not add declarations to <code>std</code> except the few customizations the standard explicitly permits.</li></ul>
+      <h2 id="done-8">Completion checklist</h2>
+      <ul class="checklist"><li>Two same-named functions coexist in different namespaces.</li><li>You can call both with qualified names.</li><li>You used a namespace alias inside one function.</li><li>You can explain using-declaration vs using-directive.</li><li>Your public header contains no using-directive.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://en.cppreference.com/w/cpp/language/namespace" target="_blank" rel="noreferrer">Namespace declarations</a></li><li><a href="https://en.cppreference.com/w/cpp/language/namespace_alias" target="_blank" rel="noreferrer">Namespace aliases</a></li><li><a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rs-using-directive" target="_blank" rel="noreferrer">Core Guidelines: using directives</a></li></ul></section>
+      <div class="next"><a href="?step=7">← Previous</a><a href="?step=9">Next: Stack vs heap →</a></div>
+    </article>
+
+    <article class="article" data-step="9">
+      <div class="kicker">Step 9 of 200 · Modern C++</div>
+      <h1>Learn stack vs heap</h1>
+      <p class="lede">Understand automatic and dynamic storage, observe when objects are created and destroyed, and stop treating “stack” and “heap” as vague performance labels.</p>
+      <div class="outcome"><strong>Definition of done:</strong> you can classify common object lifetimes, observe scope-driven destruction, allocate dynamic storage safely with RAII, and explain why returning a pointer to a local object is invalid.</div>
+      <h2 id="storage-9">Start with storage duration</h2>
+      <p>“Stack” and “heap” are implementation-oriented terms. The C++ rules are expressed as storage duration:</p>
+      <ul><li><strong>Automatic:</strong> a local object normally exists until its block ends.</li><li><strong>Dynamic:</strong> storage obtained with allocation exists until explicitly released or its owning RAII object releases it.</li><li><strong>Static:</strong> the object lives for the program’s duration.</li><li><strong>Thread:</strong> one instance lives for each thread.</li></ul>
+      <h2 id="observe-9">Observe automatic lifetime</h2>
+      <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;utility&gt;
+
+struct Trace {
+    std::string name;
+    explicit Trace(std::string value) : name{std::move(value)} {
+        std::cout &lt;&lt; "construct " &lt;&lt; name &lt;&lt; '\n';
+    }
+    ~Trace() { std::cout &lt;&lt; "destroy " &lt;&lt; name &lt;&lt; '\n'; }
+};
+
+int main() {
+    Trace outer{"outer"};
+    {
+        Trace inner{"inner"};
+        std::cout &lt;&lt; "inside block\n";
+    }
+    std::cout &lt;&lt; "after block\n";
+}</code></pre>
+      <p><code>inner</code> is destroyed at the closing brace; <code>outer</code> is destroyed when <code>main</code> ends. Destruction runs in reverse construction order. This deterministic behavior is the basis of RAII.</p>
+      <h2 id="dynamic-9">Use dynamic storage safely</h2>
+      <pre><code>#include &lt;memory&gt;
+
+int main() {
+    auto item = std::make_unique&lt;Trace&gt;("dynamic");
+    item-&gt;name = "owned dynamically";
+} // unique_ptr releases the object here</code></pre>
+      <p>The <code>Trace</code> object uses dynamic storage, but the local <code>unique_ptr</code> owns it. No manual <code>delete</code> is required. Prefer values first, then smart pointers when an object truly needs independent or polymorphic lifetime.</p>
+      <h2 id="addresses-9">Inspect addresses without over-interpreting them</h2>
+      <pre><code>int local = 7;
+auto dynamic = std::make_unique&lt;int&gt;(9);
+
+std::cout &lt;&lt; "local:   " &lt;&lt; &amp;local &lt;&lt; '\n';
+std::cout &lt;&lt; "dynamic: " &lt;&lt; dynamic.get() &lt;&lt; '\n';</code></pre>
+      <p>The addresses will often lie in visibly different ranges, but the C++ standard does not prescribe a particular stack direction or allocator layout. Use the experiment to see distinct storage, not to infer portable address rules.</p>
+      <h2 id="danger-9">Recognize a dangling pointer</h2>
+      <pre><code>int* broken() {
+    int local = 42;
+    return &amp;local; // wrong: local dies at function exit
+}</code></pre>
+      <p>After the function returns, the pointer still contains an address but no live <code>int</code> exists there. Dereferencing it is undefined behavior. Return the value instead:</p>
+      <pre><code>int correct() {
+    return 42;
+}</code></pre>
+      <div class="why"><strong>Key idea:</strong> a pointer value does not keep an object alive. Lifetime and ownership must be established separately.</div>
+      <h2 id="choose-9">Choose storage based on semantics</h2>
+      <ul><li>Use local values for ordinary scoped work.</li><li>Use containers such as <code>std::vector</code> for variable-sized collections; they manage their own dynamic storage.</li><li>Use <code>std::unique_ptr</code> when one owner needs dynamic lifetime.</li><li>Avoid raw <code>new</code> and <code>delete</code> in application code.</li><li>Do not put huge arrays on the stack; stack space is limited.</li></ul>
+      <h2 id="done-9">Completion checklist</h2>
+      <ul class="checklist"><li>You observed reverse-order destruction at scope exit.</li><li>You allocated an object through <code>make_unique</code>.</li><li>You can explain automatic, dynamic and static storage duration.</li><li>You can identify why returning a local address is invalid.</li><li>You choose values by default and dynamic ownership only for a reason.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://en.cppreference.com/w/cpp/language/storage_duration" target="_blank" rel="noreferrer">Storage duration</a></li><li><a href="https://en.cppreference.com/w/cpp/language/lifetime" target="_blank" rel="noreferrer">Object lifetime</a></li><li><a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rr-raii" target="_blank" rel="noreferrer">Core Guidelines: Resource management</a></li></ul></section>
+      <div class="next"><a href="?step=8">← Previous</a><a href="?step=10">Next: Pointers →</a></div>
+    </article>
+
+    <article class="article" data-step="10">
+      <div class="kicker">Step 10 of 200 · Modern C++</div>
+      <h1>Learn pointers</h1>
+      <p class="lede">Use pointers as explicit, nullable references to existing objects; practice dereferencing and member access; and learn the lifetime rules that make pointer code safe or dangerous.</p>
+      <div class="outcome"><strong>Definition of done:</strong> you can create, inspect, dereference and null-check pointers, pass an optional object to a function, traverse contiguous data, and identify dangling pointers.</div>
+      <h2 id="model-10">A pointer stores an address</h2>
+      <pre><code>int port = 8080;
+int* pointer = &amp;port;
+
+std::cout &lt;&lt; port &lt;&lt; '\n';       // value: 8080
+std::cout &lt;&lt; &amp;port &lt;&lt; '\n';      // address of port
+std::cout &lt;&lt; pointer &lt;&lt; '\n';    // same address
+std::cout &lt;&lt; *pointer &lt;&lt; '\n';   // value at that address
+
+*pointer = 9090;                    // modifies port</code></pre>
+      <p><code>&amp;port</code> takes an address. <code>*pointer</code> dereferences it. The pointer’s type records what kind of object is expected at the address, which determines type checking and pointer arithmetic.</p>
+      <h2 id="null-10">Represent “no object” with nullptr</h2>
+      <pre><code>struct Request {
+    int status_code;
+};
+
+void print_status(const Request* request) {
+    if (request == nullptr) {
+        std::cout &lt;&lt; "no request\n";
+        return;
+    }
+    std::cout &lt;&lt; request-&gt;status_code &lt;&lt; '\n';
+}
+
+int main() {
+    Request request{200};
+    print_status(&amp;request);
+    print_status(nullptr);
+}</code></pre>
+      <p><code>request-&gt;status_code</code> is shorthand for <code>(*request).status_code</code>. Null must be checked before dereferencing. Prefer <code>nullptr</code> over <code>0</code> or <code>NULL</code> because it has a dedicated pointer-compatible type.</p>
+      <div class="why"><strong>API signal:</strong> use a pointer parameter when “no object” is a meaningful input. If the object is required, a reference usually communicates that contract better.</div>
+      <h2 id="const-10">Read const placement</h2>
+      <pre><code>int value = 10;
+int other = 20;
+
+const int* view = &amp;value;      // pointer to const int
+int* const fixed = &amp;value;     // const pointer to mutable int
+const int* const both = &amp;value;</code></pre>
+      <ul><li><code>view</code> may point elsewhere, but cannot modify the pointed-to <code>int</code>.</li><li><code>fixed</code> cannot point elsewhere, but can modify <code>value</code>.</li><li><code>both</code> can do neither.</li></ul>
+      <h2 id="arrays-10">Traverse contiguous data</h2>
+      <pre><code>int values[]{10, 20, 30, 40};
+int* begin = values;
+int* end = values + 4;
+
+for (int* current = begin; current != end; ++current) {
+    std::cout &lt;&lt; *current &lt;&lt; '\n';
+}</code></pre>
+      <p>Adding one advances by one <code>int</code>, not one byte. Arithmetic is only valid within the same array (or one-past its end), and the one-past pointer must not be dereferenced. In ordinary code, prefer a range-for loop, iterators or <code>std::span</code>; this exercise explains what those abstractions build on.</p>
+      <h2 id="lifetime-10">Separate pointer from ownership</h2>
+      <p>A raw pointer normally observes an object; it does not say who owns or destroys it.</p>
+      <pre><code>int* dangling = nullptr;
+{
+    int temporary = 42;
+    dangling = &amp;temporary;
+}
+// *dangling is now undefined behavior</code></pre>
+      <p>Also avoid uninitialized pointers:</p>
+      <pre><code>int* bad;             // indeterminate address
+int* safe = nullptr;  // explicitly points to nothing</code></pre>
+      <div class="warning"><strong>Do not “test” undefined behavior for correctness.</strong> A dangling dereference may appear to work and still be invalid. Sanitizers help catch mistakes: compile Clang/GCC examples with <code>-fsanitize=address,undefined -fno-omit-frame-pointer</code>.</div>
+      <h2 id="done-10">Completion checklist</h2>
+      <ul class="checklist"><li>You can explain <code>&amp;</code>, <code>*</code> and <code>-&gt;</code>.</li><li>You null-check before dereferencing optional pointers.</li><li>You can read pointer-to-const and const-pointer declarations.</li><li>You traversed an array without moving outside its bounds.</li><li>You can identify uninitialized, null and dangling pointers.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://en.cppreference.com/w/cpp/language/pointer" target="_blank" rel="noreferrer">Pointer declarations</a></li><li><a href="https://en.cppreference.com/w/cpp/language/nullptr" target="_blank" rel="noreferrer">nullptr</a></li><li><a href="https://clang.llvm.org/docs/AddressSanitizer.html" target="_blank" rel="noreferrer">AddressSanitizer</a></li><li><a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-gsl" target="_blank" rel="noreferrer">Core Guidelines: pointers and ownership</a></li></ul></section>
+      <div class="next"><a href="?step=9">← Previous</a><a href="?step=11">Next: References →</a></div>
+    </article>
+
+    <article class="article" data-step="11">
+      <div class="kicker">Step 11 of 200 · Modern C++</div>
+      <h1>Learn references</h1>
+      <p class="lede">Use references to express required aliases, pass objects without copying, return access to existing state safely, and understand where references differ from pointers.</p>
+      <div class="outcome"><strong>Definition of done:</strong> you can choose value, <code>const&amp;</code>, mutable <code>&amp;</code>, or pointer parameters based on intent, and you never return a reference to a dead local object.</div>
+      <h2 id="alias-11">A reference is an alias</h2>
+      <pre><code>int port = 8080;
+int&amp; alias = port;
+
+alias = 9090;
+std::cout &lt;&lt; port &lt;&lt; '\n'; // 9090</code></pre>
+      <p>An lvalue reference must bind when declared and normally cannot be reseated. Assigning to <code>alias</code> assigns to <code>port</code>; it does not make the reference refer to a new integer.</p>
+      <h2 id="parameters-11">Make parameter intent visible</h2>
+      <pre><code>struct Request {
+    std::string path;
+    int retry_count{};
+};
+
+void print_request(const Request&amp; request) { // required, read-only, no copy
+    std::cout &lt;&lt; request.path &lt;&lt; '\n';
+}
+
+void schedule_retry(Request&amp; request) {      // required and modified
+    ++request.retry_count;
+}
+
+void maybe_print(const Request* request) {   // optional
+    if (request) print_request(*request);
+}</code></pre>
+      <p>A useful first decision table:</p>
+      <ul><li>Small independent input: pass by value, such as <code>int</code>.</li><li>Large or non-copying read-only input: pass by <code>const T&amp;</code>.</li><li>Required output/in-out object: pass by <code>T&amp;</code>.</li><li>Optional non-owning object: pass by <code>const T*</code> or <code>T*</code>.</li></ul>
+      <h2 id="return-11">Return references only to live objects</h2>
+      <pre><code>class ServerConfig {
+public:
+    const std::string&amp; host() const { return host_; }
+    std::string&amp; host() { return host_; }
+
+private:
+    std::string host_{"localhost"};
+};</code></pre>
+      <p>These references remain valid while the <code>ServerConfig</code> object and its <code>host_</code> member remain alive and unmoved. A reference-returning API exposes the original object, not a copy.</p>
+      <pre><code>const std::string&amp; broken() {
+    std::string local{"gone soon"};
+    return local; // wrong: dangling reference
+}</code></pre>
+      <div class="warning"><strong>Lifetime rule:</strong> returning by reference does not extend the lifetime of a local variable. Return a value; modern C++ efficiently elides or moves it.</div>
+      <h2 id="reference-wrapper-11">Store aliases explicitly when necessary</h2>
+      <p>References themselves are not regular reseatable objects and cannot be elements of a standard container. <code>std::reference_wrapper</code> provides an object-like, reseatable reference:</p>
+      <pre><code>#include &lt;functional&gt;
+#include &lt;vector&gt;
+
+int first = 1;
+int second = 2;
+std::vector&lt;std::reference_wrapper&lt;int&gt;&gt; values{first, second};
+
+for (int&amp; value : values) {
+    value *= 10;
+}</code></pre>
+      <h2 id="experiment-11">Prove copies and aliases differ</h2>
+      <pre><code>Request original{"/health"};
+Request copy = original;
+Request&amp; reference = original;
+
+copy.path = "/copy";
+reference.path = "/live";
+
+std::cout &lt;&lt; original.path &lt;&lt; '\n'; // /live</code></pre>
+      <p>The copy owns independent state; the reference names the original. This distinction becomes central in APIs, loops and ownership design.</p>
+      <h2 id="done-11">Completion checklist</h2>
+      <ul class="checklist"><li>You modified an object through a reference.</li><li>You chose parameter forms based on required/optional and read/write intent.</li><li>You can explain why a local reference return dangles.</li><li>You know a returned member reference depends on the owning object’s lifetime.</li><li>You compared copy behavior with alias behavior.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://en.cppreference.com/w/cpp/language/reference" target="_blank" rel="noreferrer">Reference declarations</a></li><li><a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rf-in" target="_blank" rel="noreferrer">Core Guidelines: Function arguments</a></li><li><a href="https://en.cppreference.com/w/cpp/utility/functional/reference_wrapper" target="_blank" rel="noreferrer">std::reference_wrapper</a></li></ul></section>
+      <div class="next"><a href="?step=10">← Previous</a><a href="?step=12">Next: const →</a></div>
+    </article>
+
+    <article class="article" data-step="12">
+      <div class="kicker">Step 12 of 200 · Modern C++</div>
+      <h1>Learn const</h1>
+      <p class="lede">Make immutability part of the type system, design const-correct functions and classes, and understand how const behaves with values, references and pointers.</p>
+      <div class="outcome"><strong>Definition of done:</strong> you use <code>const</code> by default for unchanged values, write const-correct member functions, and can read all common const/pointer combinations.</div>
+      <h2 id="meaning-12">Const is a compile-time contract</h2>
+      <pre><code>const int default_port = 8080;
+// default_port = 9090; // compiler error
+
+int runtime_port = read_port();
+const int selected_port = runtime_port;</code></pre>
+      <p><code>const</code> means the program cannot modify an object through that name after initialization. Unlike <code>constexpr</code>, a const value does not have to be known at compile time.</p>
+      <div class="why"><strong>Why const by default?</strong> It narrows possible state changes, documents intent to readers, and lets the compiler reject accidental mutation.</div>
+      <h2 id="parameters-12">Use const references for read-only access</h2>
+      <pre><code>struct Request {
+    std::string method;
+    std::string path;
+};
+
+void log_request(const Request&amp; request) {
+    std::cout &lt;&lt; request.method &lt;&lt; ' ' &lt;&lt; request.path &lt;&lt; '\n';
+}</code></pre>
+      <p>The reference avoids a copy. Its <code>const</code> qualifier prevents <code>log_request</code> from modifying the request. It also allows both const and non-const arguments to bind.</p>
+      <h2 id="members-12">Make member functions const-correct</h2>
+      <pre><code>class Connection {
+public:
+    explicit Connection(int id) : id_{id} {}
+
+    int id() const { return id_; }
+    bool is_open() const { return open_; }
+    void close() { open_ = false; }
+
+private:
+    int id_;
+    bool open_{true};
+};
+
+void inspect(const Connection&amp; connection) {
+    std::cout &lt;&lt; connection.id() &lt;&lt; '\n';
+    // connection.close(); // rejected: close is not const
+}</code></pre>
+      <p>The trailing <code>const</code> applies to the implicit <code>this</code> object. It promises not to modify ordinary data members and makes the method callable on a const object.</p>
+      <h2 id="overload-12">Provide const and mutable access</h2>
+      <pre><code>class Headers {
+public:
+    std::string&amp; at(std::size_t index) { return values_.at(index); }
+    const std::string&amp; at(std::size_t index) const { return values_.at(index); }
+
+private:
+    std::vector&lt;std::string&gt; values_;
+};</code></pre>
+      <p>Overloading on member-function constness preserves the caller’s permissions: mutable objects get mutable access; const objects get read-only access.</p>
+      <h2 id="pointers-12">Read const from right to left</h2>
+      <pre><code>int first = 1;
+int second = 2;
+
+const int* pointer_to_const = &amp;first;
+pointer_to_const = &amp;second;        // allowed
+// *pointer_to_const = 3;          // rejected
+
+int* const const_pointer = &amp;first;
+*const_pointer = 3;                // allowed
+// const_pointer = &amp;second;        // rejected
+
+const int* const fixed_view = &amp;first;</code></pre>
+      <p>A practical reading method is to start at the variable name and move outward. <code>const_pointer</code> is const, then it is a pointer, then it points to <code>int</code>.</p>
+      <h2 id="mutable-12">Know the narrow mutable exception</h2>
+      <pre><code>class Metrics {
+public:
+    int requests() const {
+        ++read_count_;
+        return requests_;
+    }
+private:
+    int requests_{};
+    mutable int read_count_{};
+};</code></pre>
+      <p><code>mutable</code> permits internal bookkeeping that does not change the object’s logical value. Use it sparingly—for caches, mutexes or diagnostics—not to bypass a poor const design.</p>
+      <div class="warning"><strong>Avoid const_cast.</strong> Removing constness and modifying an object originally defined as const is undefined behavior. Fix the API instead of silencing its contract.</div>
+      <h2 id="done-12">Completion checklist</h2>
+      <ul class="checklist"><li>Unchanged local variables are declared const.</li><li>Read-only large parameters use <code>const T&amp;</code>.</li><li>Observer member functions have trailing const.</li><li>You can interpret pointer-to-const and const-pointer.</li><li>You can explain const vs constexpr and physical vs logical constness.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://en.cppreference.com/w/cpp/language/cv" target="_blank" rel="noreferrer">cv type qualifiers</a></li><li><a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rconst-immutable" target="_blank" rel="noreferrer">Core Guidelines: Constants and immutability</a></li><li><a href="https://en.cppreference.com/w/cpp/language/member_functions" target="_blank" rel="noreferrer">Member functions and const</a></li></ul></section>
+      <div class="next"><a href="?step=11">← Previous</a><a href="?step=13">Next: Object lifetime →</a></div>
+    </article>
+
+    <article class="article" data-step="13">
+      <div class="kicker">Step 13 of 200 · Modern C++</div>
+      <h1>Learn object lifetime</h1>
+      <p class="lede">Track exactly when objects begin and end their lifetime, recognize dangling views and references, and design APIs whose returned data remains valid long enough.</p>
+      <div class="outcome"><strong>Definition of done:</strong> you can annotate the lifetime of every object and view in a short program, identify three dangling cases, and repair them by changing ownership or return types.</div>
+      <h2 id="begin-end-13">Lifetime is not just allocated bytes</h2>
+      <p>An object’s lifetime begins after suitable storage exists and initialization completes. It ends when destruction starts or when its storage is reused or released. Storage may still contain old-looking bits after lifetime ends, but accessing them as the dead object is invalid.</p>
+      <pre><code>struct Session {
+    explicit Session(int id) : id{id} { std::cout &lt;&lt; "start\n"; }
+    ~Session() { std::cout &lt;&lt; "end\n"; }
+    int id;
+};
+
+int main() {
+    Session session{7}; // lifetime begins after initialization
+    std::cout &lt;&lt; session.id &lt;&lt; '\n';
+} // destructor runs; lifetime ends</code></pre>
+      <h2 id="temporary-13">Observe temporary lifetime</h2>
+      <pre><code>std::string make_name() { return "roadmap"; }
+
+const std::string&amp; extended = make_name();
+std::cout &lt;&lt; extended &lt;&lt; '\n';</code></pre>
+      <p>Binding a temporary directly to this local const reference extends its lifetime to the reference’s scope. Do not generalize this to every reference hop; returning a reference parameter or storing a view does not automatically extend the original object.</p>
+      <h2 id="views-13">Treat views as borrowed access</h2>
+      <pre><code>std::string_view broken_name() {
+    std::string local{"backend"};
+    return local; // dangling string_view
+}
+
+std::string correct_name() {
+    return "backend"; // caller owns the returned value
+}</code></pre>
+      <p><code>std::string_view</code> owns no characters. The local string dies at function exit, leaving the view dangling. Views are powerful only when the referenced data clearly outlives them.</p>
+      <h2 id="invalidation-13">Learn iterator and reference invalidation</h2>
+      <pre><code>std::vector&lt;int&gt; values{1, 2, 3};
+int&amp; first = values.front();
+
+values.push_back(4); // may reallocate
+// using first may now be invalid</code></pre>
+      <p>If capacity was exhausted, <code>push_back</code> moves elements to new storage, invalidating pointers, references and iterators into the old storage. Consult each container operation’s invalidation rules; they differ by container and operation.</p>
+      <h2 id="callbacks-13">Watch captures used later</h2>
+      <pre><code>std::function&lt;void()&gt; make_callback() {
+    std::string message{"ready"};
+    return [&amp;message] { std::cout &lt;&lt; message; }; // dangling capture
+}
+
+std::function&lt;void()&gt; safe_callback() {
+    std::string message{"ready"};
+    return [message = std::move(message)] { std::cout &lt;&lt; message; };
+}</code></pre>
+      <p>Asynchronous backends make this mistake especially dangerous: a callback often runs after the creating function has returned. Capture required state by value or give it explicit shared ownership.</p>
+      <h2 id="debug-13">Use tools, but reason first</h2>
+      <pre><code>clang++ -std=c++20 -g -fsanitize=address,undefined \
+  -fno-omit-frame-pointer lifetime.cpp -o lifetime
+./lifetime</code></pre>
+      <p>Sanitizers can catch many use-after-free and bounds problems. They cannot prove that every borrowed view is safe, so document and reason about the owner and the required lifetime.</p>
+      <div class="why"><strong>Lifetime audit:</strong> for each pointer, reference, iterator, span, string view or callback capture, ask “who owns the object, and can that owner end or move it before this use?”</div>
+      <h2 id="done-13">Completion checklist</h2>
+      <ul class="checklist"><li>You can state where each local object’s lifetime begins and ends.</li><li>You repaired a function returning a dangling string view.</li><li>You understand vector reallocation invalidation.</li><li>You repaired a callback that captured a local by reference.</li><li>You ran an example under AddressSanitizer.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://en.cppreference.com/w/cpp/language/lifetime" target="_blank" rel="noreferrer">Object lifetime</a></li><li><a href="https://en.cppreference.com/w/cpp/container/vector" target="_blank" rel="noreferrer">std::vector invalidation notes</a></li><li><a href="https://en.cppreference.com/w/cpp/string/basic_string_view" target="_blank" rel="noreferrer">std::string_view</a></li><li><a href="https://clang.llvm.org/docs/AddressSanitizer.html" target="_blank" rel="noreferrer">AddressSanitizer</a></li></ul></section>
+      <div class="next"><a href="?step=12">← Previous</a><a href="?step=14">Next: RAII →</a></div>
+    </article>
+
+    <article class="article" data-step="14">
+      <div class="kicker">Step 14 of 200 · Modern C++</div>
+      <h1>Learn RAII</h1>
+      <p class="lede">Tie resource ownership to object lifetime so files, locks, sockets and memory are released on every path—including early returns and exceptions.</p>
+      <div class="outcome"><strong>Definition of done:</strong> you can wrap a C resource in a move-only RAII class, prove cleanup happens on multiple control-flow paths, and prefer existing standard RAII types when available.</div>
+      <h2 id="idea-14">Resource acquisition is initialization</h2>
+      <p>RAII means a constructor establishes an invariant by acquiring or accepting a resource, and the destructor releases it. The resource-owning object lives in an ordinary scope, so C++ automatically runs cleanup when that scope ends.</p>
+      <p>Resources include memory, file handles, sockets, mutex locks, database transactions and temporary files—not just objects created with <code>new</code>.</p>
+      <h2 id="file-14">First use an existing RAII type</h2>
+      <pre><code>#include &lt;fstream&gt;
+#include &lt;stdexcept&gt;
+#include &lt;string&gt;
+
+std::string read_first_line(const std::string&amp; path) {
+    std::ifstream input{path};
+    if (!input) {
+        throw std::runtime_error{"cannot open " + path};
+    }
+
+    std::string line;
+    std::getline(input, line);
+    return line;
+} // input closes the file here, even during stack unwinding</code></pre>
+      <p><code>std::ifstream</code> owns its file handle. There is no separate close call to forget. Standard types such as <code>vector</code>, <code>string</code>, <code>unique_ptr</code>, <code>lock_guard</code> and file streams already embody RAII.</p>
+      <h2 id="wrapper-14">Write a move-only FILE wrapper</h2>
+      <pre><code>#include &lt;cstdio&gt;
+#include &lt;stdexcept&gt;
+#include &lt;utility&gt;
+
+class File {
+public:
+    File(const char* path, const char* mode) : handle_{std::fopen(path, mode)} {
+        if (!handle_) throw std::runtime_error{"fopen failed"};
+    }
+
+    ~File() {
+        if (handle_) std::fclose(handle_);
+    }
+
+    File(const File&amp;) = delete;
+    File&amp; operator=(const File&amp;) = delete;
+
+    File(File&amp;&amp; other) noexcept
+        : handle_{std::exchange(other.handle_, nullptr)} {}
+
+    File&amp; operator=(File&amp;&amp; other) noexcept {
+        if (this != &amp;other) {
+            if (handle_) std::fclose(handle_);
+            handle_ = std::exchange(other.handle_, nullptr);
+        }
+        return *this;
+    }
+
+    std::FILE* get() const noexcept { return handle_; }
+
+private:
+    std::FILE* handle_{};
+};</code></pre>
+      <p>Copying is disabled because two owners would both close the same handle. Moving transfers the handle and clears the old owner. <code>noexcept</code> makes the transfer safe for standard containers and cleanup paths.</p>
+      <h2 id="prove-14">Prove cleanup on every path</h2>
+      <pre><code>void write_status(bool fail) {
+    File output{"status.txt", "w"};
+    std::fputs("starting\n", output.get());
+
+    if (fail) {
+        throw std::runtime_error{"simulated failure"};
+    }
+
+    std::fputs("complete\n", output.get());
+}</code></pre>
+      <p>Call it once with <code>false</code> and once with <code>true</code> inside a <code>try/catch</code>. In both cases the destructor closes the handle. This works because stack unwinding destroys fully constructed local objects.</p>
+      <h2 id="lock-14">See RAII in concurrency</h2>
+      <pre><code>std::mutex mutex;
+int request_count = 0;
+
+void record_request() {
+    std::lock_guard lock{mutex};
+    ++request_count;
+} // unlocks automatically</code></pre>
+      <p>Manual <code>lock()</code>/<code>unlock()</code> fails when an early return or exception skips the unlock. The guard makes the lock lifetime visible and mechanically correct.</p>
+      <div class="why"><strong>RAII design test:</strong> after successful construction, the object is usable; after destruction, the resource is released; partial construction failure leaks nothing; ownership transfer is explicit.</div>
+      <h2 id="done-14">Completion checklist</h2>
+      <ul class="checklist"><li>You can explain why deterministic destruction enables RAII.</li><li>You used a standard RAII file stream.</li><li>Your custom wrapper releases its handle exactly once.</li><li>The wrapper cannot be copied and can be moved.</li><li>Cleanup works during normal return and exception unwinding.</li><li>You can name the RAII types for memory, files and locks.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://en.cppreference.com/w/cpp/language/raii" target="_blank" rel="noreferrer">RAII</a></li><li><a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rr-raii" target="_blank" rel="noreferrer">Core Guidelines: Resource management</a></li><li><a href="https://en.cppreference.com/w/cpp/thread/lock_guard" target="_blank" rel="noreferrer">std::lock_guard</a></li><li><a href="https://en.cppreference.com/w/cpp/utility/exchange" target="_blank" rel="noreferrer">std::exchange</a></li></ul></section>
+      <div class="next"><a href="?step=13">← Previous</a><a href="?step=15">Next: Constructors and destructors →</a></div>
+    </article>
+
+    <article class="article" data-step="15">
+      <div class="kicker">Step 15 of 200 · Modern C++</div>
+      <h1>Learn constructors and destructors</h1>
+      <p class="lede">Design a class that is valid from the moment it exists, understand initialization order, choose explicit constructors, and observe deterministic destruction.</p>
+      <div class="outcome"><strong>Definition of done:</strong> you can enforce a class invariant in its constructor, use a member-initializer list, explain actual initialization and destruction order, and prevent unintended implicit conversions.</div>
+      <h2 id="invariant-15">Constructors establish invariants</h2>
+      <p>An invariant is a condition that every usable object must satisfy. For a listening endpoint, the host must be non-empty and the port must be in <code>1..65535</code>. Reject invalid state at construction instead of forcing every method to recheck it.</p>
+      <pre><code>#include &lt;stdexcept&gt;
+#include &lt;string&gt;
+#include &lt;utility&gt;
+
+class Endpoint {
+public:
+    Endpoint(std::string host, int port)
+        : host_{std::move(host)}, port_{port} {
+        if (host_.empty()) {
+            throw std::invalid_argument{"host cannot be empty"};
+        }
+        if (port_ &lt; 1 || port_ &gt; 65535) {
+            throw std::out_of_range{"port must be 1..65535"};
+        }
+    }
+
+    const std::string&amp; host() const noexcept { return host_; }
+    int port() const noexcept { return port_; }
+
+private:
+    std::string host_;
+    int port_;
+};</code></pre>
+      <p>The member-initializer list initializes members directly. Assigning inside the constructor body would first default-initialize members and then replace their values.</p>
+      <h2 id="order-15">Know the real initialization order</h2>
+      <pre><code>class Server {
+public:
+    Server(int port, std::string name)
+        : name_{std::move(name)}, port_{port} {}
+
+private:
+    int port_;
+    std::string name_;
+};</code></pre>
+      <p>Despite the initializer-list order, <code>port_</code> initializes first because members initialize in declaration order. Base classes initialize before members. Destruction happens in reverse order. Keep the initializer list in declaration order so the code communicates reality and avoids dependency bugs.</p>
+      <h2 id="explicit-15">Block accidental conversions</h2>
+      <pre><code>class Timeout {
+public:
+    explicit Timeout(int milliseconds) : milliseconds_{milliseconds} {}
+private:
+    int milliseconds_;
+};
+
+void set_timeout(Timeout timeout);
+
+set_timeout(Timeout{500}); // clear
+// set_timeout(500);       // rejected because constructor is explicit</code></pre>
+      <p>A single-argument constructor can otherwise become an implicit conversion. Use <code>explicit</code> unless conversion is truly part of the type’s intended meaning.</p>
+      <h2 id="delegation-15">Delegate instead of duplicating</h2>
+      <pre><code>class RetryPolicy {
+public:
+    RetryPolicy() : RetryPolicy{3, 100} {}
+
+    RetryPolicy(int attempts, int delay_ms)
+        : attempts_{attempts}, delay_ms_{delay_ms} {
+        if (attempts_ &lt; 0 || delay_ms_ &lt; 0) {
+            throw std::invalid_argument{"negative retry setting"};
+        }
+    }
+
+private:
+    int attempts_;
+    int delay_ms_;
+};</code></pre>
+      <p>The default constructor delegates to the validating constructor, leaving one place that establishes the invariant.</p>
+      <h2 id="destruction-15">Observe construction and destruction</h2>
+      <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;utility&gt;
+
+struct Trace {
+    std::string name;
+    explicit Trace(std::string n) : name{std::move(n)} {
+        std::cout &lt;&lt; "+ " &lt;&lt; name &lt;&lt; '\n';
+    }
+    ~Trace() {
+        std::cout &lt;&lt; "- " &lt;&lt; name &lt;&lt; '\n';
+    }
+};
+
+int main() {
+    Trace first{"first"};
+    Trace second{"second"};
+}</code></pre>
+      <p>The output destroys <code>second</code> before <code>first</code>. Destructors should release owned resources and should not throw; throwing during exception unwinding can terminate the program.</p>
+      <h2 id="zero-15">Prefer the Rule of Zero</h2>
+      <p>If all members manage themselves—<code>std::string</code>, <code>vector</code>, smart pointers and RAII wrappers—you usually write no destructor, copy constructor or move constructor. The compiler-generated operations compose the members correctly. Write special member functions only when the class directly manages a resource or needs unusual semantics.</p>
+      <div class="note"><strong>Experiment:</strong> try constructing <code>Endpoint{"", 8080}</code> and <code>Endpoint{"localhost", 70000}</code> inside <code>try/catch</code>. Confirm no invalid <code>Endpoint</code> becomes usable.</div>
+      <h2 id="done-15">Completion checklist</h2>
+      <ul class="checklist"><li>Your constructor establishes and validates an invariant.</li><li>Members are initialized through a member-initializer list.</li><li>The initializer list follows declaration order.</li><li>A single-argument constructor is explicit.</li><li>Shared validation uses a delegating constructor.</li><li>You can explain reverse destruction order and the Rule of Zero.</li></ul>
+      <section class="refs"><h2>References</h2><ul><li><a href="https://en.cppreference.com/w/cpp/language/constructor" target="_blank" rel="noreferrer">Constructors and member initializer lists</a></li><li><a href="https://en.cppreference.com/w/cpp/language/destructor" target="_blank" rel="noreferrer">Destructors</a></li><li><a href="https://en.cppreference.com/w/cpp/language/explicit" target="_blank" rel="noreferrer">explicit specifier</a></li><li><a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-ctor" target="_blank" rel="noreferrer">Core Guidelines: Constructors and destructors</a></li></ul></section>
+      <div class="next"><a href="?step=14">← Previous</a><a href="../">Return to roadmap →</a></div>
+    </article>
+
   </div><aside class="toc" aria-label="On this page"><strong>On this page</strong><div id="toc-links"></div></aside></main>
   <script>
-    const params=new URLSearchParams(location.search);let step=Number(params.get('step'));if(!Number.isInteger(step)||step<1||step>5)step=1;
+    const params=new URLSearchParams(location.search);let step=Number(params.get('step'));if(!Number.isInteger(step)||step<1||step>15)step=1;
     const article=document.querySelector(`[data-step="${step}"]`);article.classList.add('active');document.querySelector(`[data-nav="${step}"]`).classList.add('active');
     const heading=article.querySelector('h1').textContent;document.title=`Step ${step}: ${heading} · C++ Backend Roadmap`;
     document.querySelector('#toc-links').innerHTML=[...article.querySelectorAll('h2[id]')].map(h=>`<a href="#${h.id}">${h.textContent}</a>`).join('');
